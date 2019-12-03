@@ -84,34 +84,49 @@ void MainWindow::on_pushBtn_delect_clicked()
 
 void MainWindow::on_pushBtn_add_clicked()
 {
+    this->check();
     QString str=ui->lineEdit->text();
     this->value1=str.toInt();
     qDebug()<<this->value1;
+    this->Add_flag=1;
     ui->lineEdit->setText(ui->lineEdit->text()+"+");
+
 }
 
 void MainWindow::on_pushBtn_sub_clicked()
 {
+    this->check();
     QString str=ui->lineEdit->text();
     this->value1=str.toInt();
     qDebug()<<this->value1;
     //ui->lineEdit->setText(ui->lineEdit->text()+"+");
+    this->Sub_flag=1;
     ui->lineEdit->setText(ui->lineEdit->text()+"-");
 }
 
 void MainWindow::on_pushBtn_Div_clicked()
 {
+    this->check();
     QString str=ui->lineEdit->text();
     this->value1=str.toInt();
     qDebug()<<this->value1;
     ui->lineEdit->setText(ui->lineEdit->text()+"/");
+    this->Div_flag=1;
 }
 
 void MainWindow::on_pushBtn_Mul_clicked()
 {
+    this->check();
     QString str=ui->lineEdit->text();
-    this->value1=str.toInt();
-    qDebug()<<this->value1;
+        this->value1=str.toInt();
+        qDebug()<<this->value1;
+   /* else if(this->value2==0)
+    {
+        this->value2=str.toInt();
+        qDebug()<<this->value1;
+    }*/
+    this->mul_flag=1;
+
     ui->lineEdit->setText(ui->lineEdit->text()+"*");
 }
 
@@ -178,6 +193,128 @@ void MainWindow::on_pushBtn_sure_clicked()
         }
         ch++;
     }
-    ch++;
 
+}
+void MainWindow::check_mul()
+{
+    QString str =ui->lineEdit->text();//取出字符
+    QByteArray ba = str.toLatin1(); // must
+   // qDebug()<<str;
+    char*  ch =new char[100];
+    ch=ba.data();
+    if(this->mul_flag==1)
+    {
+        while(ch!=NULL)
+        {
+            if(*ch=='*')
+            {
+                ch++;
+                QString str1 = QString(QLatin1String(ch));
+                qDebug()<<str1;
+                qDebug()<<"vlaue1"<<this->value1;
+                this->value1*=str1.toInt();
+                qDebug()<<"vlaue2 :"<<this->value1;
+                ui->lineEdit->setText(QString("%1").arg(this->value1));
+                this->mul_flag=0;
+                break;
+            }
+            ch++;
+        }
+
+    }
+
+}
+void MainWindow::check_Div()
+{
+    QString str =ui->lineEdit->text();//取出字符
+    QByteArray ba = str.toLatin1(); // must
+   // qDebug()<<str;
+    char*  ch =new char[100];
+    ch=ba.data();
+    if(this->Div_flag==1)
+    {
+        while(ch!=NULL)
+        {
+            if(*ch=='/')
+            {
+                ch++;
+                QString str1 = QString(QLatin1String(ch));
+                qDebug()<<str1;
+                qDebug()<<"vlaue1"<<this->value1;
+                this->value1/=str1.toInt();
+                qDebug()<<"vlaue2 :"<<this->value1;
+                ui->lineEdit->setText(QString("%1").arg(this->value1));
+                this->Div_flag=0;
+                break;
+            }
+            ch++;
+        }
+
+    }
+
+}
+void MainWindow::check_Sub()
+{
+    QString str =ui->lineEdit->text();//取出字符
+    QByteArray ba = str.toLatin1(); // must
+   // qDebug()<<str;
+    char*  ch =new char[100];
+    ch=ba.data();
+    if(this->Sub_flag==1)
+    {
+        while(ch!=NULL)
+        {
+            if(*ch=='-')
+            {
+                ch++;
+                QString str1 = QString(QLatin1String(ch));
+                qDebug()<<str1;
+                qDebug()<<"vlaue1"<<this->value1;
+                this->value1-=str1.toInt();
+                qDebug()<<"vlaue2 :"<<this->value1;
+                ui->lineEdit->setText(QString("%1").arg(this->value1));
+                this->Sub_flag=0;
+                break;
+            }
+            ch++;
+        }
+
+    }
+
+}
+void MainWindow::check_Add()
+{
+    QString str =ui->lineEdit->text();//取出字符
+    QByteArray ba = str.toLatin1(); // must
+   // qDebug()<<str;
+    char*  ch =new char[100];
+    ch=ba.data();
+    if(this->Add_flag==1)
+    {
+        while(ch!=NULL)
+        {
+            if(*ch=='+')
+            {
+                ch++;
+                QString str1 = QString(QLatin1String(ch));
+                qDebug()<<str1;
+                qDebug()<<"vlaue1"<<this->value1;
+                this->value1+=str1.toInt();
+                qDebug()<<"vlaue2 :"<<this->value1;
+                ui->lineEdit->setText(QString("%1").arg(this->value1));
+                this->Add_flag=0;
+                break;
+            }
+            ch++;
+        }
+
+    }
+
+}
+void MainWindow::check()
+{
+    this->check_Add();
+    this->check_Div();
+    this->check_mul();
+    this->check_Sub();
 }

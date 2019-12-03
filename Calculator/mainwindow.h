@@ -15,8 +15,17 @@ class MainWindow : public QMainWindow
 public:
     int value1;
     int value2;
+    int mul_flag;
+    int Div_flag;
+    int Add_flag;
+    int Sub_flag;
     char flag;
     explicit MainWindow(QWidget *parent = 0);
+    void check_mul(void);
+    void check_Div(void);
+    void check_Add(void);
+    void check_Sub(void);
+    void check(void);
     ~MainWindow();
 
 private slots:
