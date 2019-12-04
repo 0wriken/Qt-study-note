@@ -14,10 +14,22 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    dialog.cpp
+    dialog.cpp \
+    quit.cpp \
+    sty_dialog.cpp \
+    lable_b.cpp \
+    pushbo_btn.cpp
 
 HEADERS  += mainwindow.h \
-    dialog.h
+    dialog.h \
+    quit.h \
+    sty_dialog.h \
+    lable_b.h \
+    pushbo_btn.h
 
 FORMS    += mainwindow.ui \
-    dialog.ui
+    dialog.ui \
+    quit.ui \
+    sty_dialog.ui \
+    lable_b.ui \
+    pushbo_btn.ui

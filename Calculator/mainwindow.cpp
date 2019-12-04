@@ -1,6 +1,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+#include <quit.h>
+#include "sty_dialog.h"
+#include "lable_b.h"
+#include "pushbo_btn.h"
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -317,4 +320,46 @@ void MainWindow::check()
     this->check_Div();
     this->check_mul();
     this->check_Sub();
+}
+
+void MainWindow::on_quit_pushbotton_clicked()
+{
+    quit d(this);
+    qDebug()<<"get i";
+    if(d.exec()==quit::Rejected)
+    {
+        qDebug()<<"get in quit";
+        this->close();
+    }
+
+}
+
+void MainWindow::on_dialog_Btn_clicked()
+{
+    sty_Dialog s(this);
+    qDebug()<<"进入框架";
+    if(s.exec()==sty_Dialog::Rejected)
+    {
+       s.close();
+    }
+}
+
+void MainWindow::on_Label_Btn_clicked()
+{
+    lable_B b(this);
+
+    if(b.exec()==lable_B::Rejected)
+    {
+     b.close();
+
+    }
+}
+
+void MainWindow::on_PushBootn_Btn_clicked()
+{
+    PushBo_Btn b(this);
+    if(b.exec()==PushBo_Btn::Rejected)
+    {
+         b.close();
+    }
 }

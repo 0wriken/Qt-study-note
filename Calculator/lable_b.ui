@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>lable_B</class>
+ <widget class="QDialog" name="lable_B">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="pic_label">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>20</y>
+     <width>111</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="gif_label">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>50</y>
+     <width>101</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QSlider" name="verticalSlider">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>80</y>
+     <width>16</width>
+     <height>160</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>400</number>
+   </property>
+   <property name="pageStep">
+    <number>20</number>
+   </property>
+   <property name="value">
+    <number>0</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="quit_pushBtn">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>270</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>quit</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>220</y>
+     <width>168</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QPushButton" name="statr_push">
+      <property name="text">
+       <string>播放</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="stop_pushBtn">
+      <property name="text">
+       <string>暂停</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

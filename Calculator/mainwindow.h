@@ -60,6 +60,14 @@ private slots:
 
     void on_pushBtn_sure_clicked();
 
+    void on_quit_pushbotton_clicked();
+
+    void on_dialog_Btn_clicked();
+
+    void on_Label_Btn_clicked();
+
+    void on_PushBootn_Btn_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

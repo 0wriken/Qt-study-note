@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>quit</class>
+ <widget class="QDialog" name="quit">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>20</y>
+     <width>179</width>
+     <height>92</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>是否确定退出？？</string>
+   </property>
+   <property name="wordWrap">
+    <bool>false</bool>
+   </property>
+   <property name="margin">
+    <number>37</number>
+   </property>
+   <property name="indent">
+    <number>9</number>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="quit_puBtn">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>119</y>
+     <width>88</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>狠心拒绝</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>37</width>
+     <height>40</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>48</x>
+     <y>119</y>
+     <width>91</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>在想想</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>45</width>
+     <height>40</height>
+    </size>
+   </property>
+   <property name="autoRepeatDelay">
+    <number>304</number>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

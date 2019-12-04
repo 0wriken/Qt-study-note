@@ -78,7 +78,7 @@
      </property>
     </spacer>
    </item>
-   <item row="3" column="1">
+   <item row="4" column="1">
     <widget class="QPushButton" name="sign_in">
      <property name="enabled">
       <bool>true</bool>
@@ -150,6 +150,13 @@
       </size>
      </property>
     </spacer>
+   </item>
+   <item row="3" column="1">
+    <widget class="QLabel" name="message_label">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

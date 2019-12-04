@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QDebug>
+#include <QMovie>
 
 namespace Ui {
 class Dialog;

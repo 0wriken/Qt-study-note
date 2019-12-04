@@ -23,488 +23,514 @@
    </size>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>60</y>
-      <width>352</width>
-      <height>188</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_5">
-     <item>
-      <widget class="QLineEdit" name="lineEdit">
-       <property name="inputMask">
-        <string notr="true"/>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="frame">
-        <bool>false</bool>
-       </property>
-       <property name="echoMode">
-        <enum>QLineEdit::Normal</enum>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_6">
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout_4">
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_5">
-           <item>
-            <widget class="QPushButton" name="pushBtn_clear">
-             <property name="text">
-              <string>C</string>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>20</width>
-               <height>30</height>
-              </size>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="pushBtn_Div">
-             <property name="text">
-              <string>/</string>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>20</width>
-               <height>30</height>
-              </size>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="pushBtn_Mul">
-             <property name="text">
-              <string>*</string>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>20</width>
-               <height>30</height>
-              </size>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QVBoxLayout" name="verticalLayout_3">
-           <item>
-            <layout class="QVBoxLayout" name="verticalLayout">
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_2">
-               <item>
-                <widget class="QPushButton" name="pushBtn1">
-                 <property name="enabled">
-                  <bool>true</bool>
-                 </property>
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="MinimumExpanding">
-                   <horstretch>60</horstretch>
-                   <verstretch>60</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>80</width>
-                   <height>23</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>1</string>
-                 </property>
-                 <property name="iconSize">
-                  <size>
-                   <width>20</width>
-                   <height>30</height>
-                  </size>
-                 </property>
-                 <property name="shortcut">
-                  <string notr="true"/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="pushBtn2">
-                 <property name="enabled">
-                  <bool>true</bool>
-                 </property>
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="MinimumExpanding">
-                   <horstretch>60</horstretch>
-                   <verstretch>60</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>80</width>
-                   <height>23</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>2</string>
-                 </property>
-                 <property name="iconSize">
-                  <size>
-                   <width>20</width>
-                   <height>30</height>
-                  </size>
-                 </property>
-                 <property name="shortcut">
-                  <string notr="true"/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="pushBtn3">
-                 <property name="enabled">
-                  <bool>true</bool>
-                 </property>
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="MinimumExpanding">
-                   <horstretch>60</horstretch>
-                   <verstretch>60</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>80</width>
-                   <height>23</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>3</string>
-                 </property>
-                 <property name="iconSize">
-                  <size>
-                   <width>20</width>
-                   <height>30</height>
-                  </size>
-                 </property>
-                 <property name="shortcut">
-                  <string notr="true"/>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_3">
-               <item>
-                <widget class="QPushButton" name="pushBtn7">
-                 <property name="enabled">
-                  <bool>true</bool>
-                 </property>
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="MinimumExpanding">
-                   <horstretch>60</horstretch>
-                   <verstretch>60</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>80</width>
-                   <height>23</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>7</string>
-                 </property>
-                 <property name="iconSize">
-                  <size>
-                   <width>20</width>
-                   <height>30</height>
-                  </size>
-                 </property>
-                 <property name="shortcut">
-                  <string notr="true"/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="pushBtn8">
-                 <property name="enabled">
-                  <bool>true</bool>
-                 </property>
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="MinimumExpanding">
-                   <horstretch>60</horstretch>
-                   <verstretch>60</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>80</width>
-                   <height>23</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>8</string>
-                 </property>
-                 <property name="iconSize">
-                  <size>
-                   <width>20</width>
-                   <height>30</height>
-                  </size>
-                 </property>
-                 <property name="shortcut">
-                  <string notr="true"/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="pushBtn9">
-                 <property name="enabled">
-                  <bool>true</bool>
-                 </property>
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="MinimumExpanding">
-                   <horstretch>60</horstretch>
-                   <verstretch>60</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>80</width>
-                   <height>23</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>9</string>
-                 </property>
-                 <property name="iconSize">
-                  <size>
-                   <width>20</width>
-                   <height>30</height>
-                  </size>
-                 </property>
-                 <property name="shortcut">
-                  <string notr="true"/>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout">
-               <item>
-                <widget class="QPushButton" name="pushBtn4">
-                 <property name="enabled">
-                  <bool>true</bool>
-                 </property>
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="MinimumExpanding">
-                   <horstretch>60</horstretch>
-                   <verstretch>60</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>80</width>
-                   <height>23</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>4</string>
-                 </property>
-                 <property name="iconSize">
-                  <size>
-                   <width>20</width>
-                   <height>30</height>
-                  </size>
-                 </property>
-                 <property name="shortcut">
-                  <string notr="true"/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="pushBtn5">
-                 <property name="enabled">
-                  <bool>true</bool>
-                 </property>
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="MinimumExpanding">
-                   <horstretch>60</horstretch>
-                   <verstretch>60</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>80</width>
-                   <height>23</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>5</string>
-                 </property>
-                 <property name="iconSize">
-                  <size>
-                   <width>20</width>
-                   <height>30</height>
-                  </size>
-                 </property>
-                 <property name="shortcut">
-                  <string notr="true"/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="pushBtn6">
-                 <property name="enabled">
-                  <bool>true</bool>
-                 </property>
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="MinimumExpanding">
-                   <horstretch>60</horstretch>
-                   <verstretch>60</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>80</width>
-                   <height>23</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string>6</string>
-                 </property>
-                 <property name="iconSize">
-                  <size>
-                   <width>20</width>
-                   <height>30</height>
-                  </size>
-                 </property>
-                 <property name="shortcut">
-                  <string notr="true"/>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_4">
-             <item>
-              <widget class="QPushButton" name="pushBtn0">
-               <property name="enabled">
-                <bool>true</bool>
-               </property>
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
-                 <horstretch>62</horstretch>
-                 <verstretch>60</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="text">
-                <string>0</string>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>20</width>
-                 <height>30</height>
-                </size>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="pushBtn_point">
-               <property name="text">
-                <string>point</string>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>20</width>
-                 <height>30</height>
-                </size>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout_2">
-         <item>
-          <widget class="QPushButton" name="pushBtn_delect">
-           <property name="text">
-            <string>&lt;-</string>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>20</width>
-             <height>30</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pushBtn_sure">
-           <property name="text">
-            <string>sure</string>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>20</width>
-             <height>30</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pushBtn_sub">
-           <property name="text">
-            <string>-</string>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>20</width>
-             <height>30</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pushBtn_add">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string>+</string>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>20</width>
-             <height>30</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout_5">
+      <item>
+       <widget class="QLineEdit" name="lineEdit">
+        <property name="inputMask">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="frame">
+         <bool>false</bool>
+        </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Normal</enum>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QPushButton" name="pushBtn_clear">
+              <property name="text">
+               <string>C</string>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>20</width>
+                <height>30</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushBtn_Div">
+              <property name="text">
+               <string>/</string>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>20</width>
+                <height>30</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushBtn_Mul">
+              <property name="text">
+               <string>*</string>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>20</width>
+                <height>30</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_2">
+                <item>
+                 <widget class="QPushButton" name="pushBtn1">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="MinimumExpanding">
+                    <horstretch>60</horstretch>
+                    <verstretch>60</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>80</width>
+                    <height>23</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>1</string>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>20</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="shortcut">
+                   <string notr="true"/>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushBtn2">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="MinimumExpanding">
+                    <horstretch>60</horstretch>
+                    <verstretch>60</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>80</width>
+                    <height>23</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>2</string>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>20</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="shortcut">
+                   <string notr="true"/>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushBtn3">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="MinimumExpanding">
+                    <horstretch>60</horstretch>
+                    <verstretch>60</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>80</width>
+                    <height>23</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>3</string>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>20</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="shortcut">
+                   <string notr="true"/>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_3">
+                <item>
+                 <widget class="QPushButton" name="pushBtn7">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="MinimumExpanding">
+                    <horstretch>60</horstretch>
+                    <verstretch>60</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>80</width>
+                    <height>23</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>7</string>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>20</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="shortcut">
+                   <string notr="true"/>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushBtn8">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="MinimumExpanding">
+                    <horstretch>60</horstretch>
+                    <verstretch>60</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>80</width>
+                    <height>23</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>8</string>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>20</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="shortcut">
+                   <string notr="true"/>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushBtn9">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="MinimumExpanding">
+                    <horstretch>60</horstretch>
+                    <verstretch>60</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>80</width>
+                    <height>23</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>9</string>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>20</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="shortcut">
+                   <string notr="true"/>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout">
+                <item>
+                 <widget class="QPushButton" name="pushBtn4">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="MinimumExpanding">
+                    <horstretch>60</horstretch>
+                    <verstretch>60</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>80</width>
+                    <height>23</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>4</string>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>20</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="shortcut">
+                   <string notr="true"/>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushBtn5">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="MinimumExpanding">
+                    <horstretch>60</horstretch>
+                    <verstretch>60</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>80</width>
+                    <height>23</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>5</string>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>20</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="shortcut">
+                   <string notr="true"/>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushBtn6">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="MinimumExpanding">
+                    <horstretch>60</horstretch>
+                    <verstretch>60</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>80</width>
+                    <height>23</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>6</string>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>20</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="shortcut">
+                   <string notr="true"/>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_4">
+              <item>
+               <widget class="QPushButton" name="pushBtn0">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+                  <horstretch>62</horstretch>
+                  <verstretch>60</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>0</string>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>20</width>
+                  <height>30</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushBtn_point">
+                <property name="text">
+                 <string>point</string>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>20</width>
+                  <height>30</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QPushButton" name="pushBtn_delect">
+            <property name="text">
+             <string>&lt;-</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>20</width>
+              <height>30</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushBtn_sure">
+            <property name="text">
+             <string>sure</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>20</width>
+              <height>30</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushBtn_sub">
+            <property name="text">
+             <string>-</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>20</width>
+              <height>30</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushBtn_add">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>+</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>20</width>
+              <height>30</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QPushButton" name="quit_pushbotton">
+        <property name="text">
+         <string>quit</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QPushButton" name="dialog_Btn">
+        <property name="text">
+         <string>框架</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QPushButton" name="Label_Btn">
+        <property name="text">
+         <string>标签</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QPushButton" name="PushBootn_Btn">
+        <property name="text">
+         <string>按钮</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

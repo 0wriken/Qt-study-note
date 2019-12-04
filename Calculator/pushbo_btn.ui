@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PushBo_Btn</class>
+ <widget class="QDialog" name="PushBo_Btn">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>22</y>
+     <width>221</width>
+     <height>231</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>19</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QPushButton" name="pic_pushButton">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../图片/brian-mcmahon-k6mw-1o9F_w-unsplash.jpg</normaloff>../图片/brian-mcmahon-k6mw-1o9F_w-unsplash.jpg</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>146</width>
+        <height>92</height>
+       </size>
+      </property>
+      <property name="shortcut">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="menu_pushButton">
+      <property name="text">
+       <string>标签</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="q_pushButton">
+      <property name="text">
+       <string>quit</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
