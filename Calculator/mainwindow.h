@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QString>
 #include <QDebug>
+#include <QDialog>
 namespace Ui {
 class MainWindow;
 }
@@ -62,12 +63,12 @@ private slots:
 
     void on_quit_pushbotton_clicked();
 
-    void on_dialog_Btn_clicked();
+  /*  void on_dialog_Btn_clicked();
 
     void on_Label_Btn_clicked();
 
     void on_PushBootn_Btn_clicked();
-
+*/
 private:
     Ui::MainWindow *ui;
 };

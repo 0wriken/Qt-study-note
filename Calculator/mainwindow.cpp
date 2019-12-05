@@ -334,7 +334,7 @@ void MainWindow::on_quit_pushbotton_clicked()
 
 }
 
-void MainWindow::on_dialog_Btn_clicked()
+/*void MainWindow::on_dialog_Btn_clicked()
 {
     sty_Dialog s(this);
     qDebug()<<"进入框架";
@@ -363,3 +363,4 @@ void MainWindow::on_PushBootn_Btn_clicked()
          b.close();
     }
 }
+*/

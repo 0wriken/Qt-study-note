@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>function</class>
+ <widget class="QDialog" name="function">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="4" column="0">
+    <widget class="QPushButton" name="label_Btn">
+     <property name="text">
+      <string>标签</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QPushButton" name="bb_pushButton">
+     <property name="text">
+      <string>按钮</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QPushButton" name="quit_Botton">
+     <property name="text">
+      <string>退出</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QPushButton" name="coulum_Btn">
+     <property name="text">
+      <string>计算器</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QPushButton" name="Dialog_Btn">
+     <property name="text">
+      <string>框架</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QPushButton" name="picshow_Btn">
+     <property name="text">
+      <string>图片游览器</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+  <zorder>coulum_Btn</zorder>
+  <zorder>Dialog_Btn</zorder>
+  <zorder>bb_pushButton</zorder>
+  <zorder>label_Btn</zorder>
+  <zorder>quit_Botton</zorder>
+  <zorder>picshow_Btn</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

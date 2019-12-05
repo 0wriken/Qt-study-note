@@ -6,9 +6,11 @@ lable_B::lable_B(QWidget *parent) :
     ui(new Ui::lable_B)
 {
     ui->setupUi(this);
-    QPixmap map("/home/wriken/Pictures/图片/tree.jpg");
+   /* QPixmap map("/home/wriken/Pictures/图片/tree.jpg");
     ui->pic_label->setPixmap(map);
-    //ui->pic_label->resize(map.width(),map.height());//label符合pic
+    *///ui->pic_label->resize(map.width(),map.height());//label符合pic
+
+    ui->pic_label->setPixmap(QPixmap ("/home/wriken/Pictures/图片/tree.jpg"));
     ui->pic_label->setScaledContents(1);
     qDebug()<<"图片加载完成";
     QMovie *m=new QMovie("/home/wriken/GIF/car.gif");
