@@ -5,7 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
-
+QT +=serialport
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = homewo
@@ -24,3 +24,6 @@ HEADERS  += homewo.h \
 FORMS    += homewo.ui \
     webdialog.ui \
     web2dialog.ui
+
+RESOURCES += \
+    res.qrc

@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resuorce/image/close.png</file>
+        <file>resuorce/image/open.png</file>
+        <file>resuorce/image/微信图片_20191110172425.jpg</file>
+        <file>resuorce/image/微信图片_20191110172409.jpg</file>
+        <file>resuorce/image/solar_term-003.jpg</file>
+        <file>resuorce/image/f532b6d8e626a0d7f6aee24a50de1ae9.jpg</file>
+        <file>resuorce/image/2376dee90262c91b2be53263211a2768.jpg</file>
+        <file>resuorce/image/jr-korpa-RKfzBQlWWhQ-unsplash.jpg</file>
+        <file>resuorce/image/riben_chengshi_jiedao-004.jpg</file>
+        <file>resuorce/image/bri.png</file>
+        <file>resuorce/image/brian-mcmahon-k6mw-1o9F_w-unsplash.jpg</file>
+    </qresource>
+</RCC>
