@@ -20,7 +20,7 @@ homewo::homewo(QWidget *parent) :
     this->Xcom_init();
     //setWindowIcon(QIcon("/home/wriken/QTtest/图片/1.jpg"));
     connect(ui->portNameComboBox,SIGNAL(activated(int)),this,SLOT(flushPortName()));
-
+    connect(ui->hexSendCheckBox,SIGNAL(clicked(bool)),this,SLOT(sendDataHex(bool)));
     //ltime->start(1000);
 }
 
@@ -51,6 +51,7 @@ void homewo::showTime()
 ************************************************************/
 void homewo::on_openFilePushButton_clicked()
 {
+
     if(!QString(ui->filePathLineEdit->text()).isEmpty())
     {
         QString filepath=QFileDialog::getOpenFileName(this,"本地文件",QString(ui->filePathLineEdit->text()),
@@ -60,31 +61,34 @@ void homewo::on_openFilePushButton_clicked()
             QMessageBox::information(this,"错误提示","选择文件夹");
             return ;
         }
+
         QFile file(filepath);
         if(!file.open(QIODevice::ReadWrite))
         {
             QMessageBox::information(this,"错误提示","打开文件失败");
             return ;
         }
-        QTextStream str(&file);
-        ui->sendBuflineEdit->setText(str.readAll());
 
     }
-       QString filepath=QFileDialog::getOpenFileName(this,"本地文件","/home/wriken/QTtest/文件夹",
-                                                     "所有文件( *);;文本文件( *txt)");
-       if(filepath.isEmpty())
-       {
-           QMessageBox::information(this,"错误提示","选择文件夹");
-           return ;
-       }
-       QFile file(filepath);
-       if(!file.open(QIODevice::ReadWrite))
-       {
-           QMessageBox::information(this,"错误提示","打开文件失败");
-           return ;
-       }
-       QTextStream str(&file);
-       ui->sendBuflineEdit->setText(str.readAll());
+    else
+    {
+        QString filepath=QFileDialog::getOpenFileName(this,"本地文件","/home/wriken/QTtest",
+                                                      "所有文件( *);;文本文件( *txt)");
+        if(filepath.isEmpty())
+        {
+            QMessageBox::information(this,"错误提示","选择文件夹");
+            return ;
+        }
+        ui->filePathLineEdit->setText(filepath);
+        QFile file(filepath);
+        if(!file.open(QIODevice::ReadWrite))
+        {
+            QMessageBox::information(this,"错误提示","打开文件失败");
+            return ;
+        }
+
+
+    }
 
 }
 
@@ -121,9 +125,12 @@ void homewo::on_sendPushButton_clicked()
         if(ui->sendNewLineCheckBox->isChecked()==1)
         {
             str+="/r/n";
-            myport->write(str.toLocal8Bit());
+            //myport->write(str.toLocal8Bit());
             //ui->receiveBufTextBrowser->setPlainText(str);
-
+            if(ui->orderHexSendCheckBox->isChecked())
+                myport->write(str.toLocal8Bit().toHex());
+            else
+                myport->write(str.toLocal8Bit());
         }
         else
         {
@@ -178,15 +185,6 @@ void homewo::Xcom_init()
     flushPortName();
     myport=new QSerialPort;
     ui->backgroundCheckBox->setChecked(1);
-
-
-    QString str1="12345679abcdok";
-    ui->receiveBufTextBrowser->setPlainText(getHexDisplay(str1));
-
-
-
-
-
 }
 
 /*************************************************************
@@ -242,6 +240,7 @@ void homewo::timeLoopSendCheckBox()
     if(ui->timeLoopSendCheckBox->isChecked()==1)
     {
     ui->orderPerio1LineEdit->setEnabled(0);
+    ui->sendTimeCheckBox->setEnabled(0);
     if(ui->sendCheckBox_0->isChecked()==1)
     {
         //qDebug()<<"自动循环检测0";
@@ -301,7 +300,9 @@ void homewo::timeLoopSendCheckBox()
     else
     {
         ui->orderPerio1LineEdit->setEnabled(1);
+        ui->sendTimeCheckBox->setEnabled(1);
     }
+
 }
 /*************************************************************
 函数名称：QStringList getPortName()
@@ -492,13 +493,19 @@ void homewo::recievePort()
     {
         if(!ui->hexDisplayCheckBox->isChecked())
         {
-            ui->receiveBufTextBrowser->appendPlainText(QString::fromLocal8Bit(myport->readAll()));
-
+            if(!ui->hexSendCheckBox->isChecked())
+               ui->receiveBufTextBrowser->appendPlainText(QString::fromLocal8Bit(myport->readAll()));
+            else
+            {
+                ui->receiveBufTextBrowser->appendPlainText(QString::fromLocal8Bit(QByteArray::fromHex(myport->readAll())));
+            }
         }
         else
-        {
-
-            ui->receiveBufTextBrowser->appendPlainText(getHexDisplay(QString::fromLocal8Bit(((myport->readAll())).toHex())));
+        {       
+            if(ui->hexSendCheckBox->isChecked())
+                ui->receiveBufTextBrowser->appendPlainText(getHexDisplay(QString::fromLocal8Bit(myport->readAll())));
+            else
+                ui->receiveBufTextBrowser->appendPlainText(getHexDisplay(QString::fromLocal8Bit(((myport->readAll())).toHex())));
 
         }
     }
@@ -572,12 +579,14 @@ void homewo::sendTime(bool checked)
 {
     if(checked)
     {
+     ui->timeLoopSendCheckBox->setEnabled(0);
      stime->start();
      stime->setInterval(ui->periodLineEdit->text().toInt());
     ui->periodLineEdit->setEnabled(0);
     }
      else
     {
+        ui->timeLoopSendCheckBox->setEnabled(1);
         stime->stop();
          ui->periodLineEdit->setEnabled(1);
     }
@@ -639,8 +648,111 @@ QString homewo::getHexDisplay(QString hex)
      str=str.toUpper();
     return  str;
 }
+/*************************************************************
+函数名称：void
+函数功能:16进制的显示发送区域
+函数参数：bool
+函数返回值：
+函数说明
+*********************************************************/
+void homewo::sendDataHex(bool checked)
+{
+    if(ui->sendBuflineEdit->text().isEmpty())
+        return ;
+   else
+    {
+    if(checked)
+    {
+        ui->sendBuflineEdit->setText(getHexDisplay(QString::fromLocal8Bit(ui->sendBuflineEdit->text().toLocal8Bit().toHex())));
+    }
+    else
+    {
 
+        ui->sendBuflineEdit->setText(QString::fromLocal8Bit(QByteArray::fromHex(ui->sendBuflineEdit->text().toLocal8Bit())));
+    }
+    }
+}
+/*************************************************************
+函数名称：void
+函数功能:校验发送数据正确性
+函数参数：bool
+函数返回值：
+函数说明
+*********************************************************/
+void homewo::on_sendBuflineEdit_textChanged(const QString &arg1)
+{
+    const QString str=arg1;
+    if(ui->hexSendCheckBox->isChecked())
+    {
+        Hex_flag=1;
 
+        for(int i=0;i<str.count();i++)
+        {
+            qDebug()<<str[i].toLatin1();
+            if(!((str[i].toLatin1() ==32 )||(str[i].toLatin1()>='a'&&str[i].toLatin1()<='f') ||(str[i].toLatin1()>='A'&&str[i].toLatin1()<='F') ||( str[i].toLatin1()>='0'&&str[i].toLatin1()<='9')))
+            {
 
+                QMessageBox::information(this,"错误提示","请输入16进制格式数据");
+                return ;
+            }
+        }
 
+    }
+}
 
+/*************************************************************
+函数名称：void
+函数功能:保存窗口
+函数参数：bool
+函数返回值：
+函数说明
+*********************************************************/
+void homewo::on_saveDataPushButton_clicked()
+{
+    QString map=QFileDialog::getSaveFileName(this,"保存路径","home/wriken/QTtest/文件夹",
+                                            "所有文件( *);;文本文件( *txt,* doc)");
+    if(map.isEmpty())
+    {
+        QMessageBox::information(this,"错误提示","the file is on found");
+        return;
+    }
+    QFile name(map);
+    if(!name.open(QIODevice::ReadWrite)|QIODevice::Text|QIODevice::Append)
+    {
+        QMessageBox::information(this,"错误提示","the file open fail");
+        return;
+    }
+    QTextStream in(&name);
+    in<<ui->receiveBufTextBrowser->toPlainText();
+    name.close();
+}
+/*************************************************************
+函数名称：void
+函数功能:发送文件-
+函数参数：bool
+函数返回值：
+函数说明
+*********************************************************/
+void homewo::on_sendFilePushButton_clicked()
+{
+    if(myport->isOpen())
+   {
+
+        QString filename=ui->filePathLineEdit->text();
+        QFile file(filename);
+        if(!file.open(QIODevice::ReadOnly|QIODevice::Text))
+        {
+            QMessageBox::information(this,"错误提示","the send file open fail");
+            return;
+        }
+        QTextStream str(&file);
+        ui->sendFileProgressBar->setMaximum(file.size());
+        while(!str.atEnd())
+        {
+            myport->write(str.readLine().toLocal8Bit());
+            ui->sendFileProgressBar->setValue(str.pos());
+        }
+        file.close();
+
+    }
+}

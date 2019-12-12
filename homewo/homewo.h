@@ -23,6 +23,7 @@
 #include <QSerialPort>
 #include <QSerialPortInfo>
 #include <QIODevice>
+
 namespace Ui {
 class homewo;
 }
@@ -49,7 +50,8 @@ private:
     QSerialPort *myport;
     qint32 stopData;
     qint32 checkData;
-
+    int Hex_flag;
+    QString message;
 
 
 
@@ -60,6 +62,7 @@ public slots:
     void recievePort();
     void sendTime(bool checked);
     void sendTimeData();
+    void sendDataHex(bool);
 
 
 private slots:
@@ -85,6 +88,9 @@ private slots:
     void on_oderPushButton_8_clicked();
     void on_oderPushButton_9_clicked();
     void on_backgroundCheckBox_clicked(bool checked);
+    void on_sendBuflineEdit_textChanged(const QString &arg1);
+    void on_saveDataPushButton_clicked();
+    void on_sendFilePushButton_clicked();
 };
 
 #endif // HOMEWO_H
