@@ -756,3 +756,21 @@ void homewo::on_sendFilePushButton_clicked()
 
     }
 }
+
+void homewo::on_stopSendFilePushButton_clicked()
+{
+    stopDialog b;
+
+    if(b.exec()==QDialog ::Rejected)
+    {
+        qDebug()<<"取消";
+        return ;
+    }
+    else
+    {
+
+        qDebug()<<"文件停止发送";
+
+        return ;
+    }
+}

@@ -23,6 +23,7 @@
 #include <QSerialPort>
 #include <QSerialPortInfo>
 #include <QIODevice>
+#include "stopdialog.h"
 
 namespace Ui {
 class homewo;
@@ -91,6 +92,7 @@ private slots:
     void on_sendBuflineEdit_textChanged(const QString &arg1);
     void on_saveDataPushButton_clicked();
     void on_sendFilePushButton_clicked();
+    void on_stopSendFilePushButton_clicked();
 };
 
 #endif // HOMEWO_H
