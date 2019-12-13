@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MusicDialog</class>
+ <widget class="QDialog" name="MusicDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>250</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-image: url(:/new/prefix1/QTtest/QT图片/dark.jpg);
+color: rgb(249, 249, 249);</string>
+  </property>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>346</x>
+     <y>101</y>
+     <width>99</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>00：00</string>
+   </property>
+  </widget>
+  <widget class="Line" name="line">
+   <property name="geometry">
+    <rect>
+     <x>135</x>
+     <y>112</y>
+     <width>205</width>
+     <height>3</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="play_Btn">
+   <property name="geometry">
+    <rect>
+     <x>346</x>
+     <y>150</y>
+     <width>99</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>播放</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>151</y>
+     <width>204</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="editable">
+    <bool>true</bool>
+   </property>
+   <property name="duplicatesEnabled">
+    <bool>false</bool>
+   </property>
+   <item>
+    <property name="text">
+     <string>顺序播放</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>随机播放</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>单曲循环</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string/>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>53</y>
+     <width>310</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>无歌曲</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="next_Btn">
+   <property name="geometry">
+    <rect>
+     <x>451</x>
+     <y>150</y>
+     <width>99</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>下一首</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="getSong">
+   <property name="geometry">
+    <rect>
+     <x>451</x>
+     <y>101</y>
+     <width>99</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>获取歌曲列表</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>101</y>
+     <width>99</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>00：00</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Local_song">
+   <property name="geometry">
+    <rect>
+     <x>451</x>
+     <y>52</y>
+     <width>99</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>获取音乐文件夹</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pre_Btn">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>150</y>
+     <width>100</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>上一首</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
