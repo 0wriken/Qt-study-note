@@ -1,0 +1,37 @@
+<RCC>
+    <qresource prefix="/new/img">
+        <file>图片/img/0.jpg</file>
+        <file>图片/img/1.jpg</file>
+        <file>图片/img/2.jpg</file>
+        <file>图片/img/3.jpg</file>
+        <file>图片/img/4.jpg</file>
+        <file>图片/img/5.jpg</file>
+        <file>图片/img/banner.jpg</file>
+        <file>图片/img/music-back.png</file>
+        <file>图片/img/preview.jpg</file>
+    </qresource>
+    <qresource prefix="/new/icon">
+        <file>图片/icon/facebook.png</file>
+        <file>图片/icon/github.png</file>
+        <file>图片/icon/icons8-fast-forward-48.png</file>
+        <file>图片/icon/icons8-ice-cream-48.png</file>
+        <file>图片/icon/icons8-no-audio-48.png</file>
+        <file>图片/icon/icons8-pause-48.png</file>
+        <file>图片/icon/icons8-resume-button-48.png</file>
+        <file>图片/icon/icons8-rewind-48.png</file>
+        <file>图片/icon/icons8-voice-48.png</file>
+        <file>图片/icon/单曲循环_32.png</file>
+        <file>图片/icon/密码.png</file>
+        <file>图片/icon/微信.png</file>
+        <file>图片/icon/推特_twitter44.png</file>
+        <file>图片/icon/文件.png</file>
+        <file>图片/icon/本地文件.png</file>
+        <file>图片/icon/用户 (1).png</file>
+        <file>图片/icon/用户.png</file>
+        <file>图片/icon/耳机.png</file>
+        <file>图片/icon/雪花.png</file>
+        <file>图片/icon/音乐列表-01 (1).png</file>
+        <file>图片/icon/音乐列表-01.png</file>
+        <file>图片/icon/顺序循环.png</file>
+    </qresource>
+</RCC>

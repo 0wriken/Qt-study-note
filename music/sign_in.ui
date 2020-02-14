@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>sign_in</class>
+ <widget class="QDialog" name="sign_in">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>767</width>
+    <height>766</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>10000</width>
+    <height>10000</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog#sign_in
+{
+
+	border-image: url(:/new/img/图片/img/preview.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+{
+       width: 40%;
+       height: 250px;
+       margin: 0 auto;
+       margin-top: 15%;
+       padding:  20px 50px;
+       text-align: center;
+       background-color:  #00000060;
+       color: #ffffff;
+}
+#login-box .form .item 
+{
+    margin-top: 15px;
+}
+
+QComboBox#Account
+{
+    border: 0;
+    border-bottom: 2px solid #ffffff;
+    padding: 5px 10px;
+    color: #ffffff;
+    background: #ffffff00;
+    font-size: 18px;
+    width: 180px;
+}
+QLineEdit#pass_lineEdit
+{
+border: 0;
+    border-bottom: 2px solid #ffffff;
+    padding: 5px 10px;
+    color: #ffffff;
+    background: #ffffff00;
+    font-size: 18px;
+    width: 180px;
+}
+#login-box .form .item i
+{
+    font-size: 18px;
+    color: #ffffff;
+} 
+QPushButton#sign_inBtn
+{
+    width: 180px;
+    height: 30px;
+    margin-top: 15px;
+    background: #ffffff00;
+    color: #ffffff;
+	background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(8, 243, 255, 255), stop:1 rgba(173, 165, 255, 255));
+    border: 0;
+    border-radius: 15ch;
+}
+
+
+
+</string>
+  </property>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>160</y>
+     <width>521</width>
+     <height>431</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(29, 29, 29,150);</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLineEdit" name="pass_lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>140</y>
+      <width>291</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(200, 60, 47);
+border:2px solid;
+border-bottom-color: rgb(255, 0, 0);
+background-color: rgba(61, 61, 61,100);
+border-radius:15px;
+/*
+background:transparent;
+*/</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Password</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>90</y>
+      <width>36</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/new/icon/图片/icon/用户.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="quit_Btn">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>290</y>
+      <width>400</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 24pt &quot;Century Schoolbook L&quot;;
+font: 28pt &quot;Sans Serif&quot;;
+color: rgb(16, 16, 16);
+	background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 0,0, 255), stop:1 rgba(24, 1, 1, 255));
+    border: 0;
+ 	border-radius:20px
+
+/*
+border:0px groove gray;border-radius:15px;padding:2px 4px;*/
+</string>
+    </property>
+    <property name="text">
+     <string>quit</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="pass">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>140</y>
+      <width>36</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/new/icon/图片/icon/密码.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="Account">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>90</y>
+      <width>291</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:2px solid;
+border-bottom-color: rgb(255, 0, 0);
+color: rgb(200, 60, 47);
+border-radius:15px;
+background-color: rgba(48, 48, 48,100);
+/*
+border:0px groove gray;border-radius:15px;padding:2px 4px;
+
+
+
+
+*/
+
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>370</y>
+      <width>40</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:transparent;
+border-image: url(:/new/icon/图片/icon/github.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>370</y>
+      <width>40</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:transparent;
+border-image: url(:/new/icon/图片/icon/facebook.png);
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>370</y>
+      <width>40</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:transparent;
+border-image: url(:/new/icon/图片/icon/推特_twitter44.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>370</y>
+      <width>40</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:transparent;
+border-image: url(:/new/icon/图片/icon/微信.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="sign_inBtn">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>230</y>
+      <width>400</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 24pt &quot;Century Schoolbook L&quot;;
+font: 28pt &quot;Sans Serif&quot;;
+color: rgb(16, 16, 16);
+	background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 0,0, 255), stop:1 rgba(24, 1, 1, 255));
+    border: 0;
+ 	border-radius:20px
+
+/*
+border:0px groove gray;border-radius:15px;padding:2px 4px;*/
+</string>
+    </property>
+    <property name="text">
+     <string>sign in</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>Account</tabstop>
+  <tabstop>pass_lineEdit</tabstop>
+  <tabstop>sign_inBtn</tabstop>
+  <tabstop>quit_Btn</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
