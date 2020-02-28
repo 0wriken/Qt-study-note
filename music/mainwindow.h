@@ -29,8 +29,11 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    void play_music();                 //开始播放音乐
-    void play_stop();                  //停止播放音乐
+    void play_music(int index);         //开始播放音乐
+    void play_stop();                   //停止播放音乐
+    void forward(int lenth);            //向前拉伸进度
+    void backward(int lenth);           //向后拉伸进度
+    void playway();                     //播放方式
 private slots:
     void on_Local_song_clicked();     //获取本地音乐文件
     void MusicIint();                 //初始化
@@ -47,6 +50,12 @@ private slots:
     void Error();                                //音乐进程出现错误
     void MusicRead();                            //进程从标准输入读取内容
     void onTimeout();                            //定时时间到服务函数
+    void on_volume_sliderMoved(int position);
+
+    void on_musicPlan_sliderMoved(int position);
+
+    void on_musicPlan_valueChanged(int value);
+
 private:
     Ui::MainWindow *ui;
     QMediaPlaylist songList;
@@ -63,7 +72,10 @@ private:
     QStringList args;                   //进程创建时的参数
     QString program;                    //创建进程需要的程序
     QTimer *timer;                      //定时器控制播放进度条
-    
+    bool Firstplay=true;                //第一次播放
+    int pos;                            //进度条所在的位置
+    bool lock_music=false;                    //锁住结束与开始
+
 };
 
 #endif // MAINWINDOW_H
