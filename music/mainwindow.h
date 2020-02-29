@@ -50,6 +50,7 @@ private slots:
     void Error();                                //音乐进程出现错误
     void MusicRead();                            //进程从标准输入读取内容
     void onTimeout();                            //定时时间到服务函数
+    void song_Timeout();                              //滚轮歌曲名
     void on_volume_sliderMoved(int position);
 
     void on_musicPlan_sliderMoved(int position);
@@ -74,8 +75,10 @@ private:
     QTimer *timer;                      //定时器控制播放进度条
     bool Firstplay=true;                //第一次播放
     int pos;                            //进度条所在的位置
-    bool lock_music=false;                    //锁住结束与开始
-
+    bool lock_music=false;              //锁住结束与开始
+    QTimer *time1;                      //定时器滚动歌曲名
+    int index_n=0;                        //歌曲名下标
+    QString song_name;                  //歌曲名
 };
 
 #endif // MAINWINDOW_H

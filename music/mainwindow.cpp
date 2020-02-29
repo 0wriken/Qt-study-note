@@ -17,14 +17,35 @@ void MainWindow::MusicIint()
 
     play_process=new  QProcess(this);  
     this->timer=new QTimer(this);
+    this->time1=new QTimer(this);
     connect(play_process,SIGNAL(started()),this,SLOT(Started())); //进程的起始程序
     connect(play_process,SIGNAL(finished(int)),this,SLOT(Finished())); //进程的结束
     connect(play_process,SIGNAL(error(QProcess::ProcessError)),this,SLOT(Error())); //关联错误
     connect(play_process,SIGNAL(readyReadStandardOutput()),this,SLOT(MusicRead())); //读取进程的标准输出
     connect(timer,SIGNAL(timeout()),this,SLOT(onTimeout()));
+    connect(time1,SIGNAL(timeout()),this,SLOT(song_Timeout()));
     ui->volume->setMaximum(200);
     ui->volume->setMinimum(0);
+    time1->start(1000);
+
     //ui->ShowToUser->verticalScrollBar()->setStyleSheet("QScrollBar:vertical width:8px; background:rgba(0,0,0,0%);margin:0px,0px,0px,0px; padding-top:9px;  padding-bottom:9px;}");
+}
+/*定时实现滚轮歌曲名*/
+void MainWindow::song_Timeout()
+{
+    //qDebug()<<ui->label_song->text().length();
+    qDebug()<<song_name.length();
+    if(this->song_name.length()>12)
+    {
+        if(++index_n>(song_name.length()-12))
+            index_n=0;
+        ui->label_song->setText(song_name.mid(index_n,12));
+        qDebug()<<index_n;
+        qDebug()<<song_name.mid(index_n,12);
+    }  //循环滚动歌曲名*/
+    qDebug()<<song_name;
+
+    //qDebug()<<song_name.mid(index_n,4);
 }
 /*播放音乐*/
 void MainWindow::play_music(int index)
@@ -277,7 +298,6 @@ void MainWindow::on_getSong_clicked()
 
     }
 }
-
 /*音量切换*/
 void MainWindow::on_Btn_voice_clicked()
 {
@@ -380,7 +400,9 @@ void MainWindow::on_ShowToUser_itemSelectionChanged()
     {
         ui->label_singer->setText(list[0]);
         QStringList list1=list[1].split(".");
+        this->song_name=list1[0] ;
         ui->label_song->setText(list1[0]);
+        index_n=0;
     }//将获取到的信息填充于信息栏
     song_index=ui->ShowToUser->currentRow();
     play_music(song_index);
