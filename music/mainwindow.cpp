@@ -457,3 +457,58 @@ void MainWindow::on_musicPlan_valueChanged(int value)
         qDebug()<<"自动播放下一首";
     }
 }
+
+
+//界面逐渐淡出
+void MainWindow::on_Btnclose_clicked()
+{
+      //QTimer *animation=new QTimer();
+      QPropertyAnimation *animation = new QPropertyAnimation(this, "windowOpacity");
+      animation->setDuration(1000);
+      animation->setStartValue(1);
+      animation->setEndValue(0);
+      animation->start();
+      saveLastMusic();
+      ReadSaveMusic();
+      connect(animation, SIGNAL(finished()), this, SLOT(close()));
+}
+
+//音乐播放结束后写入文件保存信息
+void MainWindow::saveLastMusic()
+{
+        QString flagSave ="1|";
+        QString strMusicSave=ui->ShowToUser->currentItem()->text()+"|";
+        QString songStrIndex=QString(song_index)+"|";
+        QString e=strMusicSave+songStrIndex+flagSave;
+        //QFile file("/new/icon/图片/icon/savemusic.txt");
+        QFile file("/mnt/hgfs/GIT2/music/savemusic.txt");
+        if(file.open(QIODevice::WriteOnly | QIODevice::Text))
+        {
+            file.write(e.toUtf8());  //把数据存储进文档中
+            file.close();
+        }
+        else
+        {
+            qDebug()<<"写操作打不开文件";
+        }
+
+}
+
+void MainWindow::ReadSaveMusic()
+{
+    QFile file("/mnt/hgfs/GIT2/music/savemusic.txt");
+    if(file.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+        QByteArray t;
+        while(!file.atEnd())
+        {
+            t += file.readLine(); //逐行存储文件信息
+        }
+        qDebug()<<"存储的音乐文件信息"<<(QString(t));
+        file.close();
+    }
+    else
+    {
+        qDebug()<<"读取打不开文件";
+    }
+}
