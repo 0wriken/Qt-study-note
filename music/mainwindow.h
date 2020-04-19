@@ -18,6 +18,9 @@
 #include <QProcess>
 #include <QTimer>
 #include <QByteArray>
+#include <QTimer>
+#include <QMap>
+#include <QPropertyAnimation>
 namespace Ui {
 class MainWindow;
 }
@@ -34,6 +37,8 @@ public:
     void forward(int lenth);            //向前拉伸进度
     void backward(int lenth);           //向后拉伸进度
     void playway();                     //播放方式
+    void saveLastMusic();               //存储上一次播放的文件
+    void ReadSaveMusic();               //读取上一次播放的文件
 private slots:
     void on_Local_song_clicked();     //获取本地音乐文件
     void MusicIint();                 //初始化
@@ -57,6 +62,16 @@ private slots:
 
     void on_musicPlan_valueChanged(int value);
 
+
+    void on_Btnclose_clicked();
+
+    void on_btn_Find_clicked();
+
+    void on_btn_Sink_clicked();
+
+
+    void on_LE_FIND_textChanged(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
     QMediaPlaylist songList;
@@ -79,6 +94,8 @@ private:
     QTimer *time1;                      //定时器滚动歌曲名
     int index_n=0;                        //歌曲名下标
     QString song_name;                  //歌曲名
+    QMap<QString ,int> Find_song;
+
 };
 
 #endif // MAINWINDOW_H

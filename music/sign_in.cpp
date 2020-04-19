@@ -6,7 +6,6 @@ sign_in::sign_in(QWidget *parent) :
     ui(new Ui::sign_in)
 {
     ui->setupUi(this);
-
 }
 
 sign_in::~sign_in()

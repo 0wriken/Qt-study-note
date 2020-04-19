@@ -22,9 +22,12 @@
   <property name="styleSheet">
    <string notr="true">QWidget#centralWidget
 {
-	
-	
 	border-image: url(:/new/img/图片/img/banner.jpg);
+}
+QFrame#frame
+{
+border:0px groove gray;border-radius:40px;padding:2px 4px;
+	border-image: url(:/new/img/图片/img/music-back.png);
 };</string>
   </property>
   <property name="dockNestingEnabled">
@@ -50,11 +53,7 @@
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">QFrame#frame{
-border:0px groove gray;border-radius:40px;padding:2px 4px;
-	border-image: url(:/new/img/图片/img/music-back.png);
-}
-</string>
+     <string notr="true"/>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -65,8 +64,8 @@ border:0px groove gray;border-radius:40px;padding:2px 4px;
     <widget class="QPushButton" name="getSong">
      <property name="geometry">
       <rect>
-       <x>700</x>
-       <y>205</y>
+       <x>715</x>
+       <y>215</y>
        <width>40</width>
        <height>40</height>
       </rect>
@@ -308,7 +307,7 @@ border-radius:15px;
      <property name="geometry">
       <rect>
        <x>655</x>
-       <y>210</y>
+       <y>220</y>
        <width>30</width>
        <height>30</height>
       </rect>
@@ -341,7 +340,7 @@ border:0px groove gray;border-radius:15px;padding:2px 4px;
      <property name="geometry">
       <rect>
        <x>645</x>
-       <y>90</y>
+       <y>70</y>
        <width>45</width>
        <height>45</height>
       </rect>
@@ -673,6 +672,112 @@ QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical   // 当滚动条滚
       <string>/</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="btn_Find">
+     <property name="geometry">
+      <rect>
+       <x>645</x>
+       <y>20</y>
+       <width>45</width>
+       <height>45</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background-color:transparent;
+border-image: url(:/new/icon/图片/icon/搜索.png);
+border:0px groove gray;border-radius:15px;padding:2px 4px;
+}
+
+
+QPushButton#btn_Find:hover{  
+
+  background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(221, 24, 255, 255), stop:1 rgba(255, 17, 48, 255));
+
+border:0px groove gray;border-radius:15px;padding:2px 4px;    
+
+} 
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_Sink">
+     <property name="geometry">
+      <rect>
+       <x>710</x>
+       <y>70</y>
+       <width>45</width>
+       <height>45</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background-color:transparent;
+border-image: url(:/new/icon/图片/icon/皮肤.png);
+border:0px groove gray;border-radius:15px;padding:2px 4px;
+}
+
+
+QPushButton#btn_Sink:hover{  
+
+  background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(221, 24, 255, 255), stop:1 rgba(255, 17, 48, 255));
+
+border:0px groove gray;border-radius:15px;padding:2px 4px;    
+
+} 
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="CMB_song">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>60</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="LE_FIND">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>30</y>
+       <width>151</width>
+       <height>23</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="Btnclose">
+    <property name="geometry">
+     <rect>
+      <x>1130</x>
+      <y>20</y>
+      <width>45</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+border-image: url(:/new/icon/图片/icon/关闭.png);
+border-radius:15px;
+}
+QPushButton#Btn_voice:hover{
+border-image: url(:..new/icon/图片/icon/关闭.png);
+border-radius:15px;
+	
+	background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(231,80,229, 255), stop:1 rgba(7,208,255, 255))!important;
+
+};</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">

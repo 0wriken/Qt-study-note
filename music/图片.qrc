@@ -33,5 +33,9 @@
         <file>图片/icon/音乐列表-01 (1).png</file>
         <file>图片/icon/音乐列表-01.png</file>
         <file>图片/icon/顺序循环.png</file>
+        <file>图片/icon/关闭.png</file>
+        <file>savemusic.txt</file>
+        <file>图片/icon/搜索.png</file>
+        <file>图片/icon/皮肤.png</file>
     </qresource>
 </RCC>

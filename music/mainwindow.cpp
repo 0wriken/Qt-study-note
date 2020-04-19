@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+     ui->CMB_song->setVisible(false);
 }
 
 MainWindow::~MainWindow()
@@ -34,16 +35,16 @@ void MainWindow::MusicIint()
 void MainWindow::song_Timeout()
 {
     //qDebug()<<ui->label_song->text().length();
-    qDebug()<<song_name.length();
+   // qDebug()<<song_name.length();
     if(this->song_name.length()>12)
     {
         if(++index_n>(song_name.length()-12))
             index_n=0;
         ui->label_song->setText(song_name.mid(index_n,12));
-        qDebug()<<index_n;
-        qDebug()<<song_name.mid(index_n,12);
+        //qDebug()<<index_n;
+       // qDebug()<<song_name.mid(index_n,12);
     }  //循环滚动歌曲名*/
-    qDebug()<<song_name;
+    //qDebug()<<song_name;
 
     //qDebug()<<song_name.mid(index_n,4);
 }
@@ -63,7 +64,7 @@ void MainWindow::play_music(int index)
     timer->start(80);                  //定时器800毫秒
     PlayFlag=1;                         //当前正在播放音乐   
     Firstplay=false;                    //允许暂停
-    qDebug()<<"duiyhadsaos";
+    //qDebug()<<"duiyhadsaos";
     ui->play_Btn->setStyleSheet("border-image: url(:/new/icon/图片/icon/icons8-pause-48.png);");  //图标为暂停
 }
 /*停止播放*/
@@ -145,18 +146,18 @@ void MainWindow::MusicRead()
         QString str= QString::fromLocal8Bit(arr);
         if(str.contains("ANS_LENGTH"))
 		{
-            qDebug()<<"音乐总时间"<<str;
+           // qDebug()<<"音乐总时间"<<str;
             str.remove("\n");
             str.remove("\r");
             str.remove("ANS_LENGTH");
             double t= QString(str.split("=").at(1)).toDouble();
             int m=(int)t/60;
             int s=(int)t%60;
-            qDebug()<<m<<"::"<<s;
+           // qDebug()<<m<<"::"<<s;
             QString str1=QString::number(m);
             str1+="::";
             str1+=QString::number(s);
-            qDebug()<<str1;
+           // qDebug()<<str1;
             ui->labelLen->setText(str1);
             //显示时间到label并设置进度条
             int lenth=m*60+s;
@@ -193,7 +194,7 @@ void MainWindow::on_Local_song_clicked()
     if(SongPathList.isEmpty())
     {
         MusicIint();
-        qDebug() << "文件路径"<<QCoreApplication::libraryPaths();
+        //qDebug() << "文件路径"<<QCoreApplication::libraryPaths();
         QString dirname=QFileDialog::getExistingDirectory(this,"本地文件",
                                                           "/mnt/hgfs/GIT2/music/音乐文件"
                                                 );
@@ -230,7 +231,7 @@ void MainWindow::on_Local_song_clicked()
             QListWidgetItem *item =ui->ShowToUser->takeItem(0)  ;
             delete item;
         }  //清除显示的Qwidgetlist
-        qDebug() << "文件路径"<<QCoreApplication::libraryPaths();
+       // qDebug() << "文件路径"<<QCoreApplication::libraryPaths();
         QString dirname=QFileDialog::getExistingDirectory(this,"本地文件",
                                                           "/mnt/hgfs/GIT2/music/音乐文件"
                                                 );
@@ -411,7 +412,7 @@ void MainWindow::on_ShowToUser_itemSelectionChanged()
 /*控制音量*/
 void MainWindow::on_volume_sliderMoved(int position)
 {
-    qDebug()<<"音量大小"<<position;
+   // qDebug()<<"音量大小"<<position;
     if(position==0)
     {
         play_process->write("volume 0 1\n");   //静音
@@ -421,7 +422,7 @@ void MainWindow::on_volume_sliderMoved(int position)
     QString str="volume ";
     str+=QString::number(position);
     str+=" 1\n";
-    qDebug()<<str;
+   // qDebug()<<str;
     play_process->write(str.toLocal8Bit());   //静音
     ui->Btn_voice->setStyleSheet("QPushButton{"
                                  "border-image: url(:/new/icon/图片/icon/icons8-voice-48.png);}");
@@ -454,7 +455,7 @@ void MainWindow::on_musicPlan_valueChanged(int value)
     if(value>=ui->musicPlan->maximum()-1)
     {
         playway();
-        qDebug()<<"自动播放下一首";
+       // qDebug()<<"自动播放下一首";
     }
 }
 
@@ -465,8 +466,7 @@ void MainWindow::on_Btnclose_clicked()
       //QTimer *animation=new QTimer();
       QPropertyAnimation *animation = new QPropertyAnimation(this, "windowOpacity");
       animation->setDuration(1000);
-      animation->setStartValue(1);
-      animation->setEndValue(0);
+      animation->setStartValue(1);      animation->setEndValue(0);
       animation->start();
       saveLastMusic();
       ReadSaveMusic();
@@ -477,9 +477,9 @@ void MainWindow::on_Btnclose_clicked()
 void MainWindow::saveLastMusic()
 {
         QString flagSave ="1|";
-        QString strMusicSave=ui->ShowToUser->currentItem()->text()+"|";
-        QString songStrIndex=QString(song_index)+"|";
-        QString e=strMusicSave+songStrIndex+flagSave;
+        QString strMusicSave=ui->ShowToUser->currentItem()->text();
+        QString songStrIndex=QString::number(song_index)+"|";
+        QString e=flagSave+songStrIndex+strMusicSave;
         //QFile file("/new/icon/图片/icon/savemusic.txt");
         QFile file("/mnt/hgfs/GIT2/music/savemusic.txt");
         if(file.open(QIODevice::WriteOnly | QIODevice::Text))
@@ -511,4 +511,40 @@ void MainWindow::ReadSaveMusic()
     {
         qDebug()<<"读取打不开文件";
     }
+}
+
+void MainWindow::on_btn_Find_clicked()
+{
+
+       if(ui->LE_FIND->text()=="")
+       {
+           ui->CMB_song->setVisible(false);
+           return ;
+       }
+       else
+       {
+           qDebug()<<"下标数据"<<Find_song[ui->CMB_song->currentText()];
+            song_index=Find_song[ui->CMB_song->currentText()];
+           play_music(song_index);
+           return;
+       }
+}
+
+void MainWindow::on_btn_Sink_clicked()
+{
+        ui->centralWidget->setStyleSheet("QWidget#centralWidget {border-image: url(:/new/img/图片/img/banner.jpg);}"
+        "QFrame#frame{border:0px groove gray;border-radius:40px;padding:2px 4px; border-image: url(:/new/img/图片/img/music-back.png); };");
+}
+//开始在文本框里输入数据
+void MainWindow::on_LE_FIND_textChanged(const QString &arg1)
+{
+    ui->CMB_song->setVisible(true);
+    ui->CMB_song->clear();
+    for (int i=0;i<dirlist.count();i++)
+    {
+        if(dirlist[i].fileName().contains(ui->LE_FIND->text()))
+        ui->CMB_song->addItem(dirlist[i].fileName());
+        Find_song.insert(dirlist[i].fileName(),i);    //把数据关联到下标
+    }
+    return ;
 }
