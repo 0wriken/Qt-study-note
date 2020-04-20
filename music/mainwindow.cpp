@@ -43,7 +43,7 @@ void MainWindow::song_Timeout()
         ui->label_song->setText(song_name.mid(index_n,12));
         //qDebug()<<index_n;
        // qDebug()<<song_name.mid(index_n,12);
-    }  //循环滚动歌曲名*/
+    }  //循环滚动歌曲名
     //qDebug()<<song_name;
 
     //qDebug()<<song_name.mid(index_n,4);
@@ -64,8 +64,8 @@ void MainWindow::play_music(int index)
     timer->start(80);                  //定时器800毫秒
     PlayFlag=1;                         //当前正在播放音乐   
     Firstplay=false;                    //允许暂停
-    //qDebug()<<"duiyhadsaos";
     ui->play_Btn->setStyleSheet("border-image: url(:/new/icon/图片/icon/icons8-pause-48.png);");  //图标为暂停
+    ui->ShowToUser->setCurrentRow(song_index);
 }
 /*停止播放*/
 void MainWindow::play_stop()
@@ -523,9 +523,12 @@ void MainWindow::on_btn_Find_clicked()
        }
        else
        {
+	   qDebug()<<"音乐文件名"<<ui->CMB_song->currentText();
            qDebug()<<"下标数据"<<Find_song[ui->CMB_song->currentText()];
-            song_index=Find_song[ui->CMB_song->currentText()];
+           song_index=Find_song[ui->CMB_song->currentText()];
+           //ui->ShowToUser->setCurrentRow(song_index);
            play_music(song_index);
+           //ui->ShowToUser->setCurrentRow(song_index);
            return;
        }
 }
