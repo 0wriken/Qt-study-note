@@ -535,8 +535,8 @@ void MainWindow::on_btn_Find_clicked()
 
 void MainWindow::on_btn_Sink_clicked()
 {
-        ui->centralWidget->setStyleSheet("QWidget#centralWidget {border-image: url(:/new/img/图片/img/banner.jpg);}"
-        "QFrame#frame{border:0px groove gray;border-radius:40px;padding:2px 4px; border-image: url(:/new/img/图片/img/music-back.png); };");
+        //ui->centralWidget->setStyleSheet("QWidget#centralWidget {border-image: url(:/new/img/图片/img/Green.jpg);}"
+        //"QFrame#frame{border:0px groove gray;border-radius:40px;padding:2px 4px; border-image: url(:/new/img/图片/img/Green1); };");
 }
 //开始在文本框里输入数据
 void MainWindow::on_LE_FIND_textChanged(const QString &arg1)
